@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'cadastro_screen.dart';
-
-void main() {
-  runApp(const MyApp());
-}
+import 'screens/login_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,11 +7,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Formulário de Cadastro',
+      title: 'Tela de Login',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const CadastroScreen(),
+      home: const LoginScreen(), // Chame a tela de login
     );
   }
+}
+
+void main() {
+  runApp(const MyApp());
 }

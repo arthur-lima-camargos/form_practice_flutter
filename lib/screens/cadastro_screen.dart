@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'text_box.dart';
-import 'checkbox.dart';
-import 'radio_button.dart';
-import 'slider.dart';
-import 'switch.dart';
+import '../components/text_box.dart';
+import '../components/checkbox.dart';
+import '../components/slider.dart';
+import '../components/switch.dart';
 
 class CadastroScreen extends StatefulWidget {
   const CadastroScreen({super.key});
