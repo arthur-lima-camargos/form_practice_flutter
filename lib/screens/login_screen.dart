@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'cadastro_screen.dart'; // Import da tela de cadastro
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -11,14 +12,6 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _isPasswordVisible = false;
-  int _selectedIndex = 1;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-    // Lógica de navegação pode ser adicionada aqui
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
               title: const Text('Cadastro'),
               onTap: () {
                 Navigator.pop(context);
-                // Lógica de navegação para a tela de cadastro pode ser adicionada aqui
+                // Lógica de navegação para a tela de cadastro
               },
             ),
           ],
@@ -120,7 +113,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Text("Novo aqui? "),
                 TextButton(
                   onPressed: () {
-                    // Lógica de navegação para tela de cadastro
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CadastroScreen(),
+                      ),
+                    );
                   },
                   child: const Text(
                     "Cadastre-se",
@@ -131,22 +129,6 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Início',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Conta',
-          ),
-        ],
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
       ),
     );
   }
