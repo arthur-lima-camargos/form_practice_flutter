@@ -35,7 +35,7 @@ class _CadastroScreenState extends State<CadastroScreen> {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      drawer: const CustomDrawer(currentPage: 'Login'),
+      drawer: const CustomDrawer(currentPage: 'Cadastro'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

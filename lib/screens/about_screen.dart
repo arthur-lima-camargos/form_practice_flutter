@@ -26,7 +26,7 @@ class AboutScreen extends StatelessWidget {
               fontStyle: FontStyle.italic),
         ),
       ),
-      drawer: const CustomDrawer(currentPage: 'Login'),
+      drawer: const CustomDrawer(currentPage: 'About'),
     );
   }
 }
