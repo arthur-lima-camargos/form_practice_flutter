@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/custom_drawer.dart';
 import 'cadastro_screen.dart'; // Import da tela de cadastro
 
 class LoginScreen extends StatefulWidget {
@@ -25,40 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                'Menu de Navegação',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.person),
-              title: const Text('Cadastro'),
-              onTap: () {
-                Navigator.pop(context);
-                // Lógica de navegação para a tela de cadastro
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const CustomDrawer(currentPage: 'Login'),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(40.0),
         child: Column(
